@@ -48,12 +48,12 @@ function hasTokenExpired(payloadEncoded: string): boolean{
   return payLoad.exp <= currentTime
 }
 export function GenerateAccessToken(): string{
-  const expTime : number = parseInt(process.env.ACESS_TOKEN_EXPIRE_TIME_IN_SECONS!)
+  const expTime : number = parseInt(process.env.ACESS_TOKEN_EXPIRE_TIME_IN_SECONDS!)
   const jwtAccessTokenKey : BinaryLike = process.env.JWT_ACCESS_SIGN_KEY!
   return generateToken(expTime, jwtAccessTokenKey);
 }
 export function GenerateRefreshToken(): string{
-  const expTime : number = parseInt(process.env.ACESS_TOKEN_EXPIRE_TIME_IN_SECONS!)
+  const expTime : number = parseInt(process.env.ACESS_TOKEN_EXPIRE_TIME_IN_SECONDS!)
   const jwtRefreshTokenKey : BinaryLike = process.env.JWT_REFRESH_SIGN_KEY!
 
   return generateToken(expTime, jwtRefreshTokenKey);
