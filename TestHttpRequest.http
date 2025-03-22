@@ -1,0 +1,27 @@
+###
+POST /singin HTTP/1.1
+User-Agent: localhost
+Authorization: Basic c29tZXRoaW5nOnNvbWV0aGluZw==
+Host: localhost:4000
+
+###
+GET /products HTTP/1.1
+User-Agent: insomnia/10.3.1
+X-Access-Token: IntcInR5cFwiOlwiSldUXCIsXCJhbGdcIjpcIkhTMjU2XCJ9Ig.eyJ1c2VySUQiOjEsIm5hbWUiOiJ1c2VyIiwiYWNjZXNzTGV2ZWwiOiJBZG1pbiIsImlzcyI6InlvdXItYXBwLmNvbSIsImF1ZCI6InlvdXItYXBwLWFwaSIsImlhdCI6MTc0MjYxMTI2NSwiZXhwIjoxNzQyNjExMzI1fQ.92gXOFoCNA1E92bfGFtq5McICLhrMXLLk4uuAousL4M
+Host: localhost:4000
+
+###
+GET /services HTTP/1.1
+User-Agent: insomnia/10.3.1
+X-Access-Token: IntcInR5cFwiOlwiSldUXCIsXCJhbGdcIjpcIkhTMjU2XCJ9Ig.eyJ1c2VySUQiOjEsIm5hbWUiOiJ1c2VyIiwiYWNjZXNzTGV2ZWwiOiJBZG1pbiIsImlzcyI6InlvdXItYXBwLmNvbSIsImF1ZCI6InlvdXItYXBwLWFwaSIsImlhdCI6MTc0MjYxMTI2NSwiZXhwIjoxNzQyNjExMzI1fQ.92gXOFoCNA1E92bfGFtq5McICLhrMXLLk4uuAousL4M
+Host: localhost:4000
+
+###
+POST /refreshToken HTTP/1.1
+User-Agent: insomnia/10.3.1
+X-Access-Token: IntcInR5cFwiOlwiSldUXCIsXCJhbGdcIjpcIkhTMjU2XCJ9Ig.eyJ1c2VySUQiOjEsIm5hbWUiOiJ1c2VyIiwiYWNjZXNzTGV2ZWwiOiJBZG1pbiIsImlzcyI6InlvdXItYXBwLmNvbSIsImF1ZCI6InlvdXItYXBwLWFwaSIsImlhdCI6MTc0MjYxMDI2OCwiZXhwIjoxNzQyNjEwMzI4fQ.gLsd8qwgucl2rUsoeD70fPh6JGFySmFd5IVKKkyXq68
+Host: localhost:4000
+
+
+
+
