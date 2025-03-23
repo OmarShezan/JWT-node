@@ -42,7 +42,7 @@ To simplify testing your API endpoints, a pre-configured TestHttpRequest.http fi
 - [x] Watch for ts files while serving .env file
 - [ ] Keep track of previous token so user can only use the newest token
 - [ ] Implement solution using [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) package
-- [ ] Add automated tests
+- [x] Add automated tests
 
 ## Contributing
 
