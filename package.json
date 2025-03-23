@@ -5,17 +5,20 @@
   "scripts": {
     "build": "npx tsc",
     "start": "node dist/index.js",
-    "dev": "npx tsx --env-file=.env --watch index.ts"
+    "dev": "npx tsx --env-file=.env --watch index.ts",
+    "test": "npx newman run ./tests/jwt.postman_collection.json --environment ./tests/env/Local.postman_environment.json"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "newman": "^6.2.1"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
     "nodemon": "^3.1.9",
+    "ts-jest": "^29.2.6",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.2"
   }

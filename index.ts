@@ -2,7 +2,7 @@ import express, {Request, Response, NextFunction} from "express"
 import * as Auth from './auth'
 import {IErrorResponse, ISuccessTokenResponse} from './interfaces'
 const app = express();
-
+app.use(express.json());
 
 const myPosts = [
   {
@@ -27,14 +27,21 @@ const myServices = [
 
 
 
-app.post("/singin", (req: Request, res: Response)=>{
-  const strBase64Auth : string | undefined = req.headers.authorization?.toString().split(" ")[1];
-  if(strBase64Auth == null || !Auth.IsCorrectCredential(strBase64Auth)) {
-    res.status(404).json(getErrorResponse());
-      return;
+app.post("/signin", (req: Request, res: Response)=>{
+  try{
+    const strBase64Auth : string | undefined = req.headers.authorization?.toString().split(" ")[1];
+    if(strBase64Auth?.length === 0 || strBase64Auth == null || !Auth.IsCorrectCredential(strBase64Auth)) {
+      res.status(404).json(getErrorResponse());
+        return;
+    }
+    res.status(200).json(getSuccessTokenResponse());
   }
-  res.status(200).json(getSuccessTokenResponse());
-
+  catch(err : any){
+    console.error("Error occurred:", err);
+    res.status(500).json({ message: "Internal Server Error" });
+    return
+  }
+  
 })
 
 app.post('/refreshToken', (req: Request, res: Response)=>{
@@ -99,3 +106,5 @@ function getSuccessTokenResponse(): ISuccessTokenResponse{
 app.listen(process.env.PORT,()=>{
   console.log(`server started at ${process.env.PORT}`)
 })
+
+export default app;

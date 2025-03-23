@@ -1,5 +1,5 @@
 ###
-POST /singin HTTP/1.1
+POST /signin HTTP/1.1
 User-Agent: localhost
 Authorization: Basic c29tZXRoaW5nOnNvbWV0aGluZw==
 Host: localhost:4000
@@ -13,7 +13,7 @@ Host: localhost:4000
 ###
 GET /services HTTP/1.1
 User-Agent: insomnia/10.3.1
-X-Access-Token: IntcInR5cFwiOlwiSldUXCIsXCJhbGdcIjpcIkhTMjU2XCJ9Ig.eyJ1c2VySUQiOjEsIm5hbWUiOiJ1c2VyIiwiYWNjZXNzTGV2ZWwiOiJBZG1pbiIsImlzcyI6InlvdXItYXBwLmNvbSIsImF1ZCI6InlvdXItYXBwLWFwaSIsImlhdCI6MTc0MjYxMTI2NSwiZXhwIjoxNzQyNjExMzI1fQ.92gXOFoCNA1E92bfGFtq5McICLhrMXLLk4uuAousL4M
+X-Access-Token: IntcInR5cFwiOlwiSldUXCIsXCJhbGdcIjpcIkhTMjU2XCJ9Ig.eyJ1c2VySUQiOjEsIm5hbWUiOiJ1c2VyIiwiYWNjZXNzTGV2ZWwiOiJBZG1pbiIsImlzcyI6InlvdXItYXBwLmNvbSIsImF1ZCI6InlvdXItYXBwLWFwaSIsImlhdCI6MTc0Mjc2OTkwNiwiZXhwIjoxNzQyNzY5OTY2fQ.hwJHJG1xILsiJwBBTLG0lIe8xD5-N1SrOBFY3jmo9bQ
 Host: localhost:4000
 
 ###

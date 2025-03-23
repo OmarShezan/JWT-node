@@ -1,7 +1,7 @@
 import crypto, { BinaryLike } from 'node:crypto'
 import {IMyJwtPayload} from './interfaces'
 
-function becodeBase64(strEncryptedString? : string):string{
+function decodeBase64(strEncryptedString? : string):string{
   if(strEncryptedString === null || strEncryptedString === '')
     return "";
 
@@ -12,7 +12,7 @@ function becodeBase64(strEncryptedString? : string):string{
 }
 
 function GetUserNamePasswordArr(strBase64Auth : string) : string[]{
-  const strUserNamePass : string[] = becodeBase64(strBase64Auth).split(":");
+  const strUserNamePass : string[] = decodeBase64(strBase64Auth).split(":");
   return strUserNamePass
 }
 function isValidToken(strToken: string, strTokenSign : string) : boolean{
@@ -30,6 +30,8 @@ function isValidToken(strToken: string, strTokenSign : string) : boolean{
 export function IsCorrectCredential(strBase64Auth : string) : boolean{
   //TODO send credential to DB and preform checks
   const [strUserName, strEncryptedPassword] = GetUserNamePasswordArr(strBase64Auth);
+  if(strUserName == null || strEncryptedPassword == null)
+      return false;
   return true;
 }
 export function IsValidAccessToken(strToken: string) : boolean{
@@ -41,7 +43,7 @@ export function IsValidRefreshToken(strToken: string) : boolean{
 
 
 function hasTokenExpired(payloadEncoded: string): boolean{
-  const payLoad : IMyJwtPayload = JSON.parse(becodeBase64(payloadEncoded) )as IMyJwtPayload;
+  const payLoad : IMyJwtPayload = JSON.parse(decodeBase64(payloadEncoded) )as IMyJwtPayload;
   console.log(payLoad.exp)
   const currentTime = Math.floor(Date.now() / 1000);
   console.log(currentTime)
